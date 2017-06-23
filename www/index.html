@@ -1,0 +1,228 @@
+<!-- index.html -->
+    <!DOCTYPE html>
+
+    <!-- define angular app -->
+    <html ng-app="pgmee">
+    <head>
+      <!-- SCROLLS -->
+      <!--    <link href="http://code.ionicframework.com/1.0.0-beta.4/css/ionic.css" rel="stylesheet">-->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+        <link rel="stylesheet" href="css/bootstrap.min.css" />    
+          <!-- Fonts-->
+        <link rel="stylesheet" type="text/css" href="css/themify-icons.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>    
+        <!-- Primary Style-->
+        <link rel="stylesheet" type="text/css" href="css/umega.css">
+        <link rel="stylesheet" href="css/style.css" />
+        
+    <!-- Custom JS-->
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            $(".sidebar-toggle").on("click",function(){$(".main-sidebar").toggleClass("closed")}) 
+        });
+    </script>  
+   <style type="text/css">.notification-bar .bubble .badge {
+    position: absolute;
+    top: 20px;
+    left: 27px;
+}</style>     
+</head>
+<body ng-controller="mainController">
+
+<div style="color: white;margin-right:20%;" class="pull-right"><h3>eMedLearn Q Bank</h3></div>
+
+
+<aside class="main-sidebar pinned">
+      
+      <div class="brand">
+        <a href="#" class="logo"><!--<i class="ti-underline"></i>-->
+          <h2>MENU</h2></a>
+        <a href="javascript:;"  id="close" role="button" class="sidebar-toggle visible-xs-block"><i class="ti-close text-white"></i></a>
+      </div>
+          
+          
+      <!--<div class="profile">
+        <div id="esp-profile" data-percent="65" style="height: 130px; width: 130px; line-height: 100px; padding: 15px;" class="easy-pie-chart"><img src="build/images/users/04.jpg" alt="" class="avatar img-circle"><span class="status bg-success"></span></div>
+        <h5 class="text-white mt-15 mb-5">Matthew Gonzalez</h5>
+        <div class="text-muted">Designer</div>
+      </div>-->
+      <!-- Nav tabs-->
+      <ul role="tablist" class="nav nav-tabs nav-justified nav-sidebar">
+        <li role="presentation" class="active"><a href="#menu" aria-controls="menu" role="tab" data-toggle="tab"><i class="ti-menu"></i></a></li>
+
+<li role="presentation" class=""><a href="#todaySpecial" aria-controls="todaySpecial" role="tab" data-toggle="tab"><i class="ti-menu"></i>Today Special</a></li>
+
+        <li role="presentation"><a href="#logout" aria-controls="portfolio" role="tab" data-toggle="tab" onclick="urlLoad();"><i class="ti-user"></i> Logout</a></li>
+        <!--<li role="presentation" class="bubble"><a href="#email" aria-controls="email" role="tab" data-toggle="tab"><i class="ti-email"><span class="dot bg-danger"></span></i></a></li>
+        <li role="presentation"><a href="#setting" aria-controls="setting" role="tab" data-toggle="tab"><i class="ti-server"></i></a></li>-->
+        
+      </ul>
+      <!-- Tab panes-->
+      <div class="tab-content nav-sidebar-content">
+        <div id="todaySpecial" role="tabpanel" class="tab-pane fade in">
+            <!--<a href="#" class="bubble"><i class="ti-layers-alt"></i> Today Special<span class="badge bg-danger"></span></a>-->
+            <ul class="list-unstyled navigation mb-0"  >            
+                  <li><a ng-href="#/qod/1" onclick="urlLoad();">Question of the Day</a></li>
+                  <li><a ng-href="#/qod/2" onclick="urlLoad();">Image Based Question</a></li>
+                  <li><a ng-href="#/qod/3" onclick="urlLoad();">Clinical Question</a></li>
+      
+              </ul>
+        </div>
+
+        <div id="menu" role="tabpanel" class="tab-pane fade in active">
+                   
+            <!--<li class="header">Main</li>-->
+            
+            
+            
+          <!--<ul class="list-unstyled navigation mb-0" >
+            <li class="panel"><a href="#" class="bubble"><i class="ti-home"></i>Logout<span class="badge bg-danger">3</span></a></li>
+            <li><a ng-href="#/qbank/{{childMenu.cat_id}}">{{childMenu.cat_name}}</a></li>
+          </ul>
+            -->
+            
+            <a href="#" class="bubble"><i class="ti-layers-alt"></i> QBank<span class="badge bg-danger"></span></a>
+          <ul class="list-unstyled navigation mb-0" ng-repeat="(key, value) in menu" >            
+            <!--<li class="header">Main</li>
+            <li><a href="index.html" class="bubble"><i class="ti-home"></i> Dashboard<span class="badge bg-danger">3</span></a></li>
+            -->
+            <li class="panel"><a role="button" data-toggle="collapse" data-parent=".navigation" href="#collapse{{$index}}" aria-expanded="false" aria-controls="collapse{{$index}}" class="collapsed"><!--<i class="ti-paint-bucket"></i>-->{{key}}</a>
+              
+              <ul id="collapse{{$index}}" class="list-unstyled collapse" >
+              <span ng-repeat="childMenu in value">  
+                <li><a ng-href="#/qbank/{{childMenu.cat_id}}" onclick="urlLoad();">{{childMenu.cat_name}}</a></li>
+                </span>
+                <!--
+                <li><a href="blue-system.html">Blue</a></li>
+                <li class="panel"><a href="blue-system.html" >Blue</a></li>
+                <li><a href="red-system.html">Red</a></li>
+                <li><a href="yellow-system.html">Yellow</a></li>-->
+              </ul>
+         
+            </li>
+            </ul>
+
+           </div>
+        </div>
+        
+    </aside>
+    
+    <!-- Main Sidebar end-->
+    <header>
+      <div class="brand pull-left"><a href="index.html" class="logo"><i class="ti-underline"></i>
+          <h2>MEGA<span>app</span></h2></a></div>
+          <a href="javascript:;" role="button" class="sidebar-toggle pull-left header-icon"><i class="ti-menu text-muted"></i></a>
+        
+    
+    </header>
+    <section class="page-container">
+    <div ng-view="" class="main-content noselect"></div>
+    </section>
+    
+
+
+    
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <!--<div id="main">-->
+    
+     <!--<ion-content ng-view="" class="main-content"></ion-content>-->
+    
+   <script>
+  /*function closeMenu(){
+         
+         //$(".dropdown-menu").toggle();
+    $(".dropdown-menu").toggleClass('hide');
+//$(".dropdown-menu").toggleClass('show');
+ }
+ $('#menu-burger').hover(function() {
+      $(".dropdown-menu").toggleClass('show');
+    }); */
+   
+  function closeMenu(){
+         
+
+    //$(".dropdown-menu").toggleClass('hide');
+    //$(".dropdown-menu").css("display","none");
+    
+ }
+
+
+function menuAppear(){
+    //$(".multi-level").css("display","block");
+}
+/*
+$("#menu-icon").hover(function(){
+    //$(this).css("display", "yellow");
+    alert(9);
+    $(".dropdown-menu").css("display","block");
+});
+*/
+
+   
+   
+    
+   </script>
+   
+   <div class="navbar-inner footer"><center> 
+    <!--<h7>Developed By <span style="color: #fff;cursor: pointer;" onclick="callURL('www.kumardippu.com')">www.kumardippu.com</span></h7>-->
+    </center></div>
+   <script>
+    //document.addEventListener("deviceready", onDeviceReady, false);
+        function callURL(url) {
+            alert(url);
+            window.open = cordova.InAppBrowser.open(url, '_blank', 'location=yes');
+        }
+   </script>
+   
+   </body>
+   </html>
+   
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<!--<script src="js/jquery-1.11.0.min.js"></script>-->
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/custom/main.js"></script>
+<script src="js/custom/route.js"></script>
+<script src="js/custom/factory.js"></script>
+<script src="js/custom/service.js"></script>
+<script>$(document).ready(function () {
+ 
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();      
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed == true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+  
+  
+  urlLoad();
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+});
+
+function urlLoad(){
+    //location.reload();
+    $('#close').trigger('click'); 
+}
+    
+</script>

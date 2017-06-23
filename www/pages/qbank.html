@@ -1,0 +1,38 @@
+<!-- contact.html -->
+    <!--<div class="jumbotron text-center">-->
+    <div class="jumbotron">
+        
+            <div class="row" ng-if="error==false">
+    			<h3 ng-if="qod==false"><strong><u>Question {{question_no+1}} / {{qcount}}</strong></u>
+
+                <input type="number" ng-model="jumpq1" class="input-sm" style="max-width: 70px;" placeholder="Q no" />
+                <input ng-if="qod==false" type="button" name="nextQ1" value="Jump"  class="btn" style="margin:10px 0;" ng-click="nextQuestion( (jumpq1-1),qcount )" />    
+                </h3>
+                <h3 ng-if="qod==true"><strong><u>Todays Special</strong></u></h3>
+                <strong>{{ques.question}}</strong><br>
+                <span ng-if="ques.qimage!=''">
+                    <img ng-src="http://pgmeeuploads.com/uploads/images/full/{{ques.qimage}}" ng-click="imgEnlarger(imgFlag)"  class="{{imgLarger}}" />
+                                       
+                </span><br />
+                <input type="radio" required name="qod" ng-model="opt" ng-value="1" />{{ques.opt1}}<br/>
+    			<input type="radio" required name="qod" ng-model="opt" ng-value="2" />{{ques.opt2}}<br/>
+    			<input type="radio" required name="qod" ng-model="opt" ng-value="3" />{{ques.opt3}}<br/>
+    			<input type="radio" required name="qod" ng-model="opt" ng-value="4" />{{ques.opt4}}<br />
+                <p ng-if="validate==false"><code>Please select any option to submit.</code><br /></p>
+                <input type="submit" name="qod" value="Submit"  class="btn btn-success" style="margin:10px 0;" ng-click="showExp(opt)" ng-disabled="show" />
+                <input ng-if="qod==false" type="button" name="nextQ" value="Previous"  class="btn" style="margin:10px 0;" ng-click="prevQuestion( (question_no-1),qcount)" />
+                <input ng-if="qod==false" type="button" name="nextQ" value="Next"  class="btn" style="margin:10px 0;" ng-click="nextQuestion( (question_no+1),qcount )" />
+
+                <div ng-if="show" >           
+                
+                <div ng-if="qod==false" class="results-bar-correct" ng-style="{ 'width': per.percentCorrect + '%' }" >{{per.percentCorrect}}%  USER GAVE CORRECT ANSWER</div>
+                <br />
+                <div ng-if="qod==false" class="results-bar-incorrect" ng-style="{ 'width': per.percentIncorrect + '%' }">{{per.percentIncorrect}}% USER GAVE INCORRECT ANSWER</div>
+                
+                   <strong> Answer is :  <span ng-bind-html="ques.ans"></span></strong>
+                    <div  ng-bind-html="ques.explanation" class="explanation"></div>
+                </div> 
+            </div> 
+            <div class="row" ng-if="error==true"><p><code>{{error_msg}}</code></p></div>           
+    </div>
+    
