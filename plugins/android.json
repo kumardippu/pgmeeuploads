@@ -1,0 +1,34 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "phonegap-plugin-push": {
+            "SENDER_ID": "753970131531",
+            "PACKAGE_NAME": "com.ionicframework.pgmeeuploads757917"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.pgmeeuploads757917"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.pgmeeuploads757917"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.pgmeeuploads757917"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.pgmeeuploads757917"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.pgmeeuploads757917"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.pgmeeuploads757917"
+        }
+    },
+    "dependent_plugins": {}
+}

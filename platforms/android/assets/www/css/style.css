@@ -1,0 +1,171 @@
+.navbar-inner{
+    background:linear-gradient(#356902, #60b201);
+    /*background-color: #60b201;*/
+    color:white;
+}
+
+.text-muted {
+    color: #eee;
+}
+
+/*.container{
+    background:linear-gradient(#356902, #60b201);
+ 
+    color:white;
+}*/
+/*.dropdown-toggle{
+    color:white !important;
+}*/
+
+.main-content{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.jumbotron{
+    font-size:medium;
+    background-color: rgba(238, 238, 238, 0.29);
+}
+.explanation{
+    
+    height:200px; 
+    overflow-y:scroll; 
+    padding:10px; 
+    background:#f5f5f5;
+    font-size: smaller;
+    
+}
+
+/* graph */
+.results-bar-correct{
+    background:rgba(34, 177, 79, 0.59);
+    color: #000;
+    padding: 10px;
+    white-space: nowrap;
+    font-size: x-small; 
+}
+.results-bar-incorrect{
+    background:rgba(237, 28, 36, 0.68);
+    color: #000;
+    padding: 10px;
+    white-space: nowrap;
+    font-size: x-small; 
+}
+
+.row{
+    font-size:smaller; 
+}
+
+.dropdown-menu {
+   font-size: 12px !important;
+}
+.footer{
+    bottom:0;
+    position:fixed;
+    z-index:100;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+    height:18px;
+    width:100%;
+}
+
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: -10px !important;
+}
+
+/* Login Form */
+
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+/*.container {
+    padding: 16px;
+}*/
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+/* Login End */
+
+/* Img Larger*/
+.img-larger{
+    display:block;width:100%; max-width:600px; margin:auto;    
+}
+
+/** Restrict Copy by no selcting text **/
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+/** Restrict Copy by no selcting text **/
+
+.nav-tabs.nav-justified {
+    font-size: smaller!important;
+}
+.navigation>li>a {
+    font-size: small!important;   
+}

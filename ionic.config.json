@@ -1,4 +1,9 @@
 {
   "name": "pgmeeuploads",
-  "app_id": "44b223cc"
+  "app_id": "44b223cc",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
+  "watchPatterns": []
 }
